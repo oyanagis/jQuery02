@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryUIの練習</title>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+</head>
+<body>
+    <div class="box">box</div>
+    
+    <style>
+    .box {
+    	width: 100px;
+    	height: 100px;
+    	background: #ccc;
+    }
+    </style>
+    <script>
+    $(function() {
+    	$('.box').draggable().resizable({
+    		handles: 'all',
+    		aspectRatio: true,
+    		stop: function(event, ui) {
+    			console.log(ui.size.height, ui.size.width);
+    		}
+    	});
+    	
+    });
+    </script>
+</body>
+</html>
